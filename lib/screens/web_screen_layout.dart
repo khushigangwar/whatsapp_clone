@@ -41,12 +41,61 @@ class WebScreenLayout extends StatelessWidget {
                     image: AssetImage('assets/backgroundImage.png'),
                     fit: BoxFit.cover),
               ),
-              child: const Column(children: [
+              child: Column(children: [
                 //Chat App Bar
-                WebChatAppBar(),
+                const WebChatAppBar(),
+
                 //Chat List
-                Expanded(child: ChatList())
+                const Expanded(child: ChatList()),
+
                 //Message Input Box
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: dividerColor,
+                      ),
+                    ),
+                    color: chatBarMessage,
+                  ),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.emoji_emotions_outlined),
+                        color: Colors.grey,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.attach_file),
+                        color: Colors.grey,
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            right: 15,
+                          ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                                fillColor: searchBarColor,
+                                filled: true,
+                                hintText: 'Type a message',
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20))),
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.mic),
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                )
               ])),
         ],
       ),
