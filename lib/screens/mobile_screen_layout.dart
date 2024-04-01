@@ -51,7 +51,7 @@ class MobileScreenLayout extends StatelessWidget {
                   Tab(text: 'CALLS'),
                 ]),
           ),
-          body: ContactsList(),
+          body: const ContactsList(),
         ));
   }
 }
